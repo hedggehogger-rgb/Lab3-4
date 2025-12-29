@@ -11,7 +11,7 @@ public class pumpkin extends person {
     public void dream() {
         this.eyesClosed = true;
         System.out.println(this.name + " крепко зажмуривает глаза.");
-        say("Никакого синьора Помидора тут больше нет. Я плыву, как моряк, по Тихому океану...");
+        say("Никакого синьора Помидора тут нет. Я плыву, как моряк, по Тихому океану...");
     }
 
     public void openEyes() {
@@ -28,7 +28,6 @@ public class pumpkin extends person {
         }
     }
 
-    // Переопределение equals/hashCode/toString уже есть в родителе, но добавим для специфики поля
     @Override
     public String toString() {
         return "pumpkin{name='" + name + "', eyesClosed=" + eyesClosed + "}";
