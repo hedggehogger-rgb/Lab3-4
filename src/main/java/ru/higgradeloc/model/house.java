@@ -47,15 +47,14 @@ public class house implements shake {
         System.out.println("Домик подвергся тряске с интенсивностью: " + level);
 
         switch (level) {
-            case LOW -> System.out.println("Домик слегка покачивается.");
-            case MEDIUM -> {
+            case min -> System.out.println("Домик слегка покачивается.");
+            case med -> {
                 shatter();
                 System.out.println("Слышен скрип кирпичей.");
             }
-            case HIGH_BEAST_MODE -> {
+            case max -> {
                 shatter();
                 loseTiles();
-                // Бросаем проверяемое исключение, так как конструкция не выдерживает
                 throw new StructuralDamageException("Хрупкая конструкция домика не выдержала ярости!");
             }
         }
@@ -63,7 +62,7 @@ public class house implements shake {
 
     @Override
     public String toString() {
-        return "House{owner=" + owner.getName() + ", tilesCount=" + roofTiles.size() + "}";
+        return "{владелец домика " + owner.getName() + ", Оставшихся черепиц " + roofTiles.size() + "}";
     }
 
     @Override
